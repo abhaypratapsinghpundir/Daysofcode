@@ -1,0 +1,11 @@
+class Solution{
+    int DivisibleByEight(String s){
+        //code here
+         int l=s.length();
+        
+        int check= Integer.parseInt(s.substring(Math.max(l-3,0)));
+        
+        if(check%8==0) return 1;
+        return -1;
+    }
+}
