@@ -1,0 +1,25 @@
+class Solution {
+
+    public static int equilibriumPoint(long arr[], int n) {
+
+        // Your code here
+        if(n==1)
+        return (int)arr[0];
+        long end=0;
+        for(int i=0;i<n;i++){
+            end+=arr[i];
+        }
+        long start=arr[0];
+        int p=1;
+        long pre=0;
+        while(p<n-1){
+            pre=(start+arr[p]);
+            if((end-pre)==start){
+                return p+1;
+            }
+            start=pre;
+            p++;
+        }
+        return -1;
+    }
+}
