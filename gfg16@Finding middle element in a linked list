@@ -1,0 +1,28 @@
+class Solution
+{
+    int countNode(Node head){
+        if(head == null){
+            return -1;
+        }
+        if(head.next == null){
+            return 0;
+        }
+        int count = 0;
+        while(head!=null){
+            head = head.next;
+            count++;
+        }
+        return count;
+    }
+    
+    int getMiddle(Node head)
+    {
+         // Your code here.
+        int mid = countNode(head)/2;
+        while(mid>0){
+            head = head.next;
+            mid--;
+        }
+        return head.data;
+    }
+}
